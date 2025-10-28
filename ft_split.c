@@ -6,21 +6,12 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:18:02 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/26 22:12:06 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/10/28 00:16:22 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return(i);
-}
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
@@ -39,84 +30,75 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-char	*count_words(char const *s, char c)
+int	count_words(const char *s, char c)
 {
-	int		i;
-	int		j;
-	char	*start;
+	int	i;
+	int	word;
 
 	i = 0;
-	j = 0;
-	start = "";
+	word = 0;
 	while (s[i])
 	{
-		while (s[i] != c)
-		{
-			start[j] = s[i];
-			j++;
-		}
+		while(s[i] && s[i] == c)
+			i++;
+		word++;
 		i++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	return (start);
+	return (word);
+}
+
+char	*def_word(char const *s, char c)
+{
+	int		i;
+	int		end;
+	char	*word;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	end = i;
+	word = ft_substr(s, 0, end);
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**splitted;
-	int		sepcounter;
-	int		i;
-	int		j;
-	size_t	lens;
-	char	start;
-	char	end;
+	char	**arr;
+	char	**ptr;
+	int		lenwords;
 
-	i = 0;
-	j = 0;
-	sepcounter = 0;
-	lens = ft_strlen(s);
-	while (s[i] == c)
-	{
-		sepcounter++;
-		printf("%d", sepcounter);
-	}
-	splitted = malloc(lens);
-	if (!splitted)
+	lenwords = count_words(s, c);
+	arr = malloc((lenwords + 1) * sizeof(char *));
+	if (!arr)
 		return (NULL);
-	while (s[i])
+	ptr = arr;
+	while (*s)
 	{
-		if (s[i] == c)
+		while(*s && *s == c)
+			s++;
+		if (*s)
 		{
-			i++;
-			printf("%d", i);
+			*ptr = def_word(s, c);
+			while(*s && *s != c)
+				s++;
+			ptr++;
 		}
-		else
-		{
-			start = s[i];
-			i++;
-			printf("%d", start);
-			if (s[i] == c)
-			{
-				end = s[i - 1];
-				printf("%d", end);
-				i++;
-			}
-		}
-		ft_substr(splitted[j], start, end);
-		start++;
-		end++;
-		j++;
 	}
-	return (splitted);
+	*ptr = NULL;
+	return (arr);
 }
+
 int main()
 {
-	char c = ',';
-	char *s = "salut,je suis, ta mere";
-	// int lens = ft_strlen(s);
-	// char **splitted = ft_split("salut,je suis, ta mere", ',');
-
-	// for (int i = 0; i < 3; i++)
-	// 	printf("%s\n", splitted[i]);
-
-	printf("%s", count_words(s, c));
+	char	s[30] = ",,,yes,fff,vvv,,,";
+	char	c = ',';
+	char	**splitted = ft_split(s, c);
+	char	**ptr = splitted;
+	while (*ptr != NULL)
+	{
+		printf("%s\n", *ptr);
+		ptr++;
+	}
 }
