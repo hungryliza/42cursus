@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 19:51:31 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:23:01 by limelo-c         ###   ########.fr       */
+/*   Created: 2025/10/29 20:24:19 by limelo-c          #+#    #+#             */
+/*   Updated: 2025/10/29 21:23:54 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		((char *)dest)[i] = ((char *)src)[i];
+		write(fd, &s[i], 1);
 		i++;
 	}
 }
 /*
 int main()
 {
-	char s[40] = "eee";
-	char d[40] = "eee";
-	ft_memcpy(d, s, 3);
-	printf("%s\n", s);
-	printf("%s\n", d);
+	int fd = open("file.txt", O_RDWR);
+	ft_putstr_fd("hey", fd);
 }*/

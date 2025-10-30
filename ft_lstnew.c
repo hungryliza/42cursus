@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 19:51:31 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:23:01 by limelo-c         ###   ########.fr       */
+/*   Created: 2025/10/29 22:32:44 by limelo-c          #+#    #+#             */
+/*   Updated: 2025/10/30 17:37:00 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*lst;
 
-	i = 0;
-	while (i < n)
-	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
-	}
+	lst = malloc(sizeof(t_list));
+	if (!lst)
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }
-/*
 int main()
 {
-	char s[40] = "eee";
-	char d[40] = "eee";
-	ft_memcpy(d, s, 3);
-	printf("%s\n", s);
-	printf("%s\n", d);
-}*/
+	int num = 10;
+	int num2 = 5;
+	t_list *meu_node =  ft_lstnew(&num);
+	t_list *meu_node2 =  ft_lstnew(&num2);
+	meu_node->next = meu_node2;
+	printf("%d<\n", *(int *)meu_node->next->content);
+}

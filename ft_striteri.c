@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 19:51:31 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:23:01 by limelo-c         ###   ########.fr       */
+/*   Created: 2025/10/28 01:55:49 by limelo-c          #+#    #+#             */
+/*   Updated: 2025/10/29 21:11:03 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (i < ft_strlen(s))
 	{
-		((char *)dest)[i] = ((char *)src)[i];
+		(*f)(i, &s[i]);
 		i++;
 	}
 }
 /*
+void	printer_fx(unsigned int i, char *d)
+{
+	printf("%d ", i);
+	printf("%s\n", d);
+}
 int main()
 {
-	char s[40] = "eee";
-	char d[40] = "eee";
-	ft_memcpy(d, s, 3);
-	printf("%s\n", s);
-	printf("%s\n", d);
+	ft_striteri("dih", printer_fx);
 }*/

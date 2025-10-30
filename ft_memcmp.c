@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 20:22:57 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/24 00:00:35 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/10/29 21:22:52 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	else
 		return (-1);
 }
+/*
 int main()
 {
 	printf("%d\n", ft_memcmp("abcdz", "abcde", 5));
 	printf("%d\n", memcmp("abcdz", "abcde", 5));
-}
+}*/

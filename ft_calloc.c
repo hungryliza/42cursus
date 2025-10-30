@@ -6,23 +6,11 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 12:02:29 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/24 20:13:24 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/10/29 21:21:24 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while(i < n)
-	{
-		((char *)s)[i] = '\0';
-		i++;
-	}
-}
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -38,6 +26,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	return (res);
 }
+/*
 int main()
 {
 	int *b = ft_calloc(7, sizeof(size_t));
@@ -45,4 +34,4 @@ int main()
 	for (int i = 0; i < 7; i++)
 		printf("%d", b[i]);
 	free(b);
-}
+}*/

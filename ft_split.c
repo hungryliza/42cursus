@@ -6,30 +6,12 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:18:02 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/28 00:51:12 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/10/29 21:43:38 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*sub;
-	size_t	i;
-
-	i = 0;
-	sub = malloc(len * sizeof(char) + 1);
-	if (!(sub))
-		return (NULL);
-	while (i < len)
-	{
-		sub[i] = s[start];
-		start++;
-		i++;
-	}
-	sub[i] = '\0';
-	return (sub);
-}
 int	count_words(const char *s, char c)
 {
 	int	i;
@@ -89,7 +71,7 @@ char	**ft_split(char const *s, char c)
 	*ptr = NULL;
 	return (arr);
 }
-
+/*
 int main()
 {
 	char	s[30] = ",,,yes,fff,vvv,,,";
@@ -101,4 +83,9 @@ int main()
 		printf("%s\n", *ptr);
 		ptr++;
 	}
-}
+	for(size_t i = 0; splitted[i] != NULL ; i++)
+	{
+		free(splitted[i]);
+	}
+	free(splitted);
+}*/

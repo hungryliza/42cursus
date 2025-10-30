@@ -6,13 +6,13 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:51:24 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/24 21:59:02 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/10/29 21:38:23 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
@@ -30,11 +30,14 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
+/*
 int main()
 {
 	unsigned int start = 3;
 	size_t len = 6;
-	char *s = "cheguei na festa";
+	char s[] = "cheguei na festa";
+	char *c = ft_substr(s, start, len);
 
-	printf("%s", ft_substr(s, start, len));
-}
+	printf("%s", c);
+	free(c);
+}*/

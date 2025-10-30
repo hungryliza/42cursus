@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 19:51:31 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:23:01 by limelo-c         ###   ########.fr       */
+/*   Created: 2025/10/29 20:30:12 by limelo-c          #+#    #+#             */
+/*   Updated: 2025/10/29 21:23:46 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else if(n >= 10)
 	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(n + '0', fd);
 	}
 }
 /*
 int main()
 {
-	char s[40] = "eee";
-	char d[40] = "eee";
-	ft_memcpy(d, s, 3);
-	printf("%s\n", s);
-	printf("%s\n", d);
+	int fd = open("file.txt", O_RDWR);
+	ft_putnbr_fd(0, fd);
+	ft_putchar_fd('\n', fd);
 }*/

@@ -6,21 +6,11 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:58:20 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/24 22:36:31 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/10/29 21:11:23 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return(i);
-}
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

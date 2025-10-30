@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 20:27:00 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/28 01:52:59 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/10/29 21:22:13 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ void	aux_itoa(char *res, int n, int size)
 		i++;
 	}
 }
-
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char *res;
 	int sign;
@@ -46,6 +45,8 @@ char *ft_itoa(int n)
 
 	sign = 1;
 	size = countnum(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return ("0");
 	if (n < 0)
@@ -63,7 +64,11 @@ char *ft_itoa(int n)
 		res[0] = '-';
 	return (res);
 }
+/*
 int main()
 {
-	printf("%s\n", ft_itoa(-385739857));
-}
+	int i = -2147483648;
+	char *s = ft_itoa(i);
+	printf("%s\n", s);
+	free(s);
+}*/

@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 19:51:31 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:23:01 by limelo-c         ###   ########.fr       */
+/*   Created: 2025/10/29 18:50:30 by limelo-c          #+#    #+#             */
+/*   Updated: 2025/10/29 21:26:13 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
+	char	*str;
 
 	i = 0;
-	while (i < n)
+	str = malloc(ft_strlen(s) + 1);
+	if (!str)
+		return (NULL);
+	while (i < ft_strlen(s))
 	{
-		((char *)dest)[i] = ((char *)src)[i];
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
+	return (str);
 }
 /*
+char	fx(unsigned int i, char c)
+{
+	(void)i;
+	return(c - 32);
+}
 int main()
 {
-	char s[40] = "eee";
-	char d[40] = "eee";
-	ft_memcpy(d, s, 3);
-	printf("%s\n", s);
-	printf("%s\n", d);
+	printf("%s", ft_strmapi("dih", fx));
 }*/
