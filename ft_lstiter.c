@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 21:40:39 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/11/02 19:55:09 by limelo-c         ###   ########.fr       */
+/*   Created: 2025/11/02 20:40:38 by limelo-c          #+#    #+#             */
+/*   Updated: 2025/11/02 22:34:09 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,15 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	ptr->next = new;
 }
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	del(lst->content);
-	free(lst);
-}
-void	del(void *content)
-{
-	free(content);
+	t_list	*next;
+	while (lst != NULL)
+	{
+		next = lst->next;
+		f(lst->content);
+		lst = next;
+	}
 }
 char	*ft_strdup(const char *s)
 {
@@ -72,20 +73,28 @@ char	*ft_strdup(const char *s)
 	newstr[i] = '\0';
 	return (newstr);
 }
+void	ft_f(void *c)
+{
+	char *str;
+	str = (char *)c;
+	while (*str)
+	{
+		if (*str >= 97 && *str <= 122)
+			*str -= 32;
+		str++;
+	}
+}
 int main()
 {
 	char *str = ft_strdup("rsgesrgw");
+	char *str1 = ft_strdup("fdfdfd");
+	char *str2 = ft_strdup("fdjkh");
 	t_list	*lst = ft_lstnew(str);
-	t_list	*newnode = ft_lstnew("fdfdfd");
-	t_list	*newnode1 = ft_lstnew("5483");
+	t_list	*newnode = ft_lstnew(str1);
+	t_list	*newnode1 = ft_lstnew(str2);
 	ft_lstadd_back(&lst, newnode);
 	ft_lstadd_back(&lst, newnode1);
-	if (lst != NULL)
-	{
-		t_list *delete = lst;
-		lst = lst->next;
-		ft_lstdelone(delete, del);
-	}
+	ft_lstiter(lst, ft_f);
 	while(lst != NULL)
 	{
 		printf("%s", (char *)lst->content);
