@@ -6,72 +6,23 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 21:40:39 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/11/02 19:55:09 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:27:50 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*lst;
-
-	lst = malloc(sizeof(t_list));
-	if (!lst)
-		return (NULL);
-	lst->content = content;
-	lst->next = NULL;
-	return (lst);
-}
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return(i);
-}
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*ptr;
-
-	ptr = *lst;
-	if (!new || !lst)
-		return ;
-	while (ptr->next != NULL)
-		ptr = ptr->next;
-	ptr->next = new;
-}
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	del(lst->content);
 	free(lst);
 }
+
 void	del(void *content)
 {
 	free(content);
 }
-char	*ft_strdup(const char *s)
-{
-	char	*newstr;
-	size_t	lens;
-	size_t	i;
-
-	i = 0;
-	lens = ft_strlen(s);
-	newstr = malloc(lens + 1);
-	if (!(newstr))
-		return (NULL);
-	while (s[i])
-	{
-		newstr[i] = s[i];
-		i++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
-}
+/*
 int main()
 {
 	char *str = ft_strdup("rsgesrgw");
@@ -93,4 +44,4 @@ int main()
 			printf("->");
 		lst = lst->next;
 	}
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 00:32:02 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:11:19 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/04 01:36:37 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,29 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
+	size_t	dstlen;
 
 	i = 0;
 	j = 0;
+	dstlen = ft_strlen(dst);
+	if (size <= dstlen)
+		return (size + ft_strlen(src));
 	while (dst[i])
 		i++;
-	while (i < size)
+	while (i < size - 1)
 	{
 		dst[i] = src[j];
 		i++;
 		j++;
 	}
 	dst[i] = '\0';
-	return (ft_strlen(dst));
+	return (ft_strlen(src) + dstlen);
 }
-/*int main()
+/* int main()
 {
 	char s[10] = "dddddd";
 	char d[10] = "eeee";
 	printf("%ld\n", ft_strlcat(d, s, sizeof(d)));
 	printf("%s", d);
 
-}*/
+} */

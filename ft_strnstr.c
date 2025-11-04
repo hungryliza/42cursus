@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 21:59:59 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:11:37 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/04 00:03:56 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	while (big[i] && i < len)
 	{
-		if(!(ft_strncmp(big, little, lilsize)))
+		if (!(ft_strncmp(big, little, lilsize)))
 			return ((char *)big);
 		big++;
 		i++;
@@ -33,5 +33,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 int main()
 {
-	printf("%s", ft_strnstr("abcdefghij", "bcd", 5));
+	printf("%s", ft_strnstr("", "", 0));
 }*/

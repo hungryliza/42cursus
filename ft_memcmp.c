@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 20:22:57 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:22:52 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/04 01:50:16 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while(((unsigned char *)s1)[i] && i < n - 1)
+	while (i < n)
 	{
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		i++;
 	}
-	if (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i] > 0)
-		return (1);
-	else if (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i] == 0)
-		return (0);
-	else
-		return (-1);
+	return (0);
 }
 /*
 int main()

@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 22:59:32 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:27:53 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 22:59:59 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	if (!s1 || !set)
 		return (NULL);
@@ -30,10 +30,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int main()
 {
-	char *s1 = ft_strdup("0123hello");
-	char *s2 = ft_strdup("0143");
+	char *s1 = ft_strdup(" ");
+	char *s2 = ft_strdup(" ");
 
-	printf("%s\n", ft_strtrim("666puta666", "6876"));
+	printf("%s\n", ft_strtrim(s1, s2));
 	free(s1);
 	free(s2);
 }*/

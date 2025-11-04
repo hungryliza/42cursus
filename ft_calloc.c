@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 12:02:29 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:21:24 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 22:33:01 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb * size > __SIZE_MAX__)
 		return (malloc(0));
 	res = malloc(nmemb * size);
-	ft_bzero(res, nmemb * size);
 	if (!(res))
 		return (NULL);
+	ft_bzero(res, nmemb * size);
 	return (res);
 }
 /*

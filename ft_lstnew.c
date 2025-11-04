@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 22:32:44 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/30 17:37:00 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:39:53 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_list	*ft_lstnew(void *content)
 	lst->next = NULL;
 	return (lst);
 }
+/*
 int main()
 {
 	int num = 10;
@@ -31,4 +32,4 @@ int main()
 	t_list *meu_node2 =  ft_lstnew(&num2);
 	meu_node->next = meu_node2;
 	printf("%d<\n", *(int *)meu_node->next->content);
-}
+}*/

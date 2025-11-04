@@ -6,13 +6,13 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 22:17:36 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:12:04 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:30:52 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 	{
@@ -20,5 +20,4 @@ int		ft_tolower(int c)
 		return (c);
 	}
 	return (c);
-
 }

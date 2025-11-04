@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:18:02 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:43:38 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:26:07 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	count_words(const char *s, char c)
 	word = 0;
 	while (s[i])
 	{
-		while(s[i] && s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		word++;
 		i++;
@@ -58,12 +58,12 @@ char	**ft_split(char const *s, char c)
 	ptr = arr;
 	while (*s)
 	{
-		while(*s && *s == c)
+		while (*s && *s == c)
 			s++;
 		if (*s)
 		{
 			*ptr = def_word(s, c);
-			while(*s && *s != c)
+			while (*s && *s != c)
 				s++;
 			ptr++;
 		}

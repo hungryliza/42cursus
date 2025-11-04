@@ -6,27 +6,16 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 21:25:41 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/11/03 02:04:16 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:30:18 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*lst;
-
-	lst = malloc(sizeof(t_list));
-	if (!lst)
-		return (NULL);
-	lst->content = content;
-	lst->next = NULL;
-	return (lst);
-}
-
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ptr;
+
 	if (!new || !lst)
 		return ;
 	if (!*lst)
@@ -39,7 +28,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		ptr = ptr->next;
 	ptr->next = new;
 }
-
+/*
 int main()
 {
 	t_list	*lst = NULL;
@@ -54,4 +43,4 @@ int main()
 			printf("->");
 		lst = lst->next;
 	}
-}
+}*/

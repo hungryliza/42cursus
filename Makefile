@@ -35,7 +35,19 @@ SRCS = ft_isalpha.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c
 
+BONUS_SRCS = ft_lstnew.c\
+			ft_lstadd_front.c\
+			ft_lstsize.c\
+			ft_lstlast.c\
+			ft_lstadd_back.c\
+			ft_lstdelone.c\
+			ft_lstclear.c\
+			ft_lstiter.c\
+			ft_lstmap.c\
+
 OBJ = $(SRCS:.c=.o)
+
+BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 
 CC = cc
 FLAGS = -Wall -Werror -Wextra -Iincludes
@@ -45,11 +57,14 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+bonus : $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+
 %.o : %cc
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean : clean
 	rm -f $(NAME)

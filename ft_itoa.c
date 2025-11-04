@@ -6,17 +6,19 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 20:27:00 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:22:13 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/04 02:00:20 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int countnum(int n)
+int	countnum(int n)
 {
-	int count;
+	int	count;
 
 	count = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		count++;
@@ -27,7 +29,7 @@ int countnum(int n)
 
 void	aux_itoa(char *res, int n, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size)
@@ -37,11 +39,12 @@ void	aux_itoa(char *res, int n, int size)
 		i++;
 	}
 }
+
 char	*ft_itoa(int n)
 {
-	char *res;
-	int sign;
-	int size;
+	char	*res;
+	int		sign;
+	int		size;
 
 	sign = 1;
 	size = countnum(n);

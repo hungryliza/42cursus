@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:51:43 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/23 22:17:04 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:18:46 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ size_t	ft_strlen(const char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	return(i);
+	return (i);
 }

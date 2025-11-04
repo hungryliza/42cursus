@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:51:24 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:38:23 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/04 01:51:50 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub = malloc(len * sizeof(char) + 1);
 	if (!(sub))
 		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
 	while (i < len)
 	{
 		sub[i] = s[start];

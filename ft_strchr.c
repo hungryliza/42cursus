@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 19:06:07 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/23 23:49:57 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/04 01:39:53 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ char	*ft_strchr(const char *s, int c)
 		}
 		s++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
-/*int main()
+/*
+int main()
 {
-	printf("%s\n", ft_strchr("dbac", 'a'));
-	//printf("%s\n", strchr("dbac", 97));
+	printf("%s\n", ft_strchr("hhh", '\0'));
+	printf("%s\n", strchr("hhh", '\0'));
 }*/

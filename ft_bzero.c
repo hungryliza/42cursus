@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:46:13 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:21:14 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:20:38 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		((char *)s)[i] = '\0';
 		i++;

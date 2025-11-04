@@ -6,13 +6,13 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:50:56 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:09:56 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/03 22:58:48 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isaplha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);

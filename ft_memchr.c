@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 20:21:16 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/10/29 21:22:26 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/04 01:46:31 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n - 1)
 	{
-		if (((unsigned char *)s)[i] == c)
+		if (((unsigned char *)s)[i] == (unsigned char)c)
 			return ((void *)(s + i));
 		i++;
 	}
