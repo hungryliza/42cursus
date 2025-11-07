@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 21:40:39 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/11/03 17:27:50 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/07 00:15:18 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst->content);
 	free(lst);
 }
-
+/*
 void	del(void *content)
 {
 	free(content);
 }
-/*
+
 int main()
 {
 	char *str = ft_strdup("rsgesrgw");

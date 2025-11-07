@@ -6,27 +6,11 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 22:36:42 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/11/03 17:30:40 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/07 00:16:02 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-void	*ft_f(void *c)
-{
-	char	*str;
-	char	*start;
-
-	str = (char *)c;
-	start = str;
-	while (*str)
-	{
-		if (*str >= 97 && *str <= 122)
-			*str -= 32;
-		str++;
-	}
-	return (start);
-}*/
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -49,6 +33,22 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (newlst);
 }
 /*
+
+void	*ft_f(void *c)
+{
+	char	*str;
+	char	*start;
+
+	str = (char *)c;
+	start = str;
+	while (*str)
+	{
+		if (*str >= 97 && *str <= 122)
+			*str -= 32;
+		str++;
+	}
+	return (start);
+}
 void	del(void *content)
 {
 	free(content);

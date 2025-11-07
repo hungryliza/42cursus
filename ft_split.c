@@ -6,16 +6,16 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:18:02 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/11/03 17:26:07 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/07 01:33:24 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(const char *s, char c)
+static size_t	count_words(const char *s, char c)
 {
-	int	i;
-	int	word;
+	size_t	i;
+	size_t	word;
 
 	i = 0;
 	word = 0;
@@ -23,19 +23,22 @@ int	count_words(const char *s, char c)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		word++;
-		i++;
+		if (s[i] != '\0')
+		{
+			word++;
+			i++;
+		}
 		while (s[i] && s[i] != c)
 			i++;
 	}
 	return (word);
 }
 
-char	*def_word(char const *s, char c)
+static char	*def_word(char const *s, char c)
 {
-	int		i;
-	int		end;
-	char	*word;
+	size_t		i;
+	size_t		end;
+	char		*word;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -49,7 +52,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	char	**ptr;
-	int		lenwords;
+	size_t	lenwords;
 
 	lenwords = count_words(s, c);
 	arr = malloc((lenwords + 1) * sizeof(char *));
@@ -71,8 +74,7 @@ char	**ft_split(char const *s, char c)
 	*ptr = NULL;
 	return (arr);
 }
-/*
-int main()
+/* int main()
 {
 	char	s[30] = ",,,yes,fff,vvv,,,";
 	char	c = ',';
@@ -88,4 +90,4 @@ int main()
 		free(splitted[i]);
 	}
 	free(splitted);
-}*/
+} */

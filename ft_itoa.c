@@ -6,13 +6,13 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 20:27:00 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/11/04 02:00:20 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/07 00:01:02 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countnum(int n)
+static int	countnum(int n)
 {
 	int	count;
 
@@ -27,7 +27,7 @@ int	countnum(int n)
 	return (count);
 }
 
-void	aux_itoa(char *res, int n, int size)
+static void	aux_itoa(char *res, int n, int size)
 {
 	int	i;
 
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	if (n < 0)
 	{
 		sign = -1;

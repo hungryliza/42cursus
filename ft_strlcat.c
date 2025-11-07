@@ -6,7 +6,7 @@
 /*   By: limelo-c <limelo-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 00:32:02 by limelo-c          #+#    #+#             */
-/*   Updated: 2025/11/04 01:36:37 by limelo-c         ###   ########.fr       */
+/*   Updated: 2025/11/07 01:22:35 by limelo-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + ft_strlen(src));
 	while (dst[i])
 		i++;
-	while (i < size - 1)
+	while (src[j] && i < size - 1)
 	{
 		dst[i] = src[j];
 		i++;
