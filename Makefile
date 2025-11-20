@@ -1,74 +1,38 @@
-NAME = libft.a
+NAME			=	libftprintf.a
 
-SRCS = ft_isalpha.c\
-		ft_isdigit.c\
-		ft_isalnum.c\
-		ft_isascii.c\
-		ft_isprint.c\
-		ft_strlen.c\
-		ft_memset.c\
-		ft_bzero.c\
-		ft_memcpy.c\
-		ft_memmove.c\
-		ft_strlcpy.c\
-		ft_strlcat.c\
-		ft_toupper.c\
-		ft_tolower.c\
-		ft_strchr.c\
-		ft_strrchr.c\
-		ft_strncmp.c\
-		ft_memchr.c\
-		ft_memcmp.c\
-		ft_strnstr.c\
-		ft_atoi.c\
-		ft_calloc.c\
-		ft_strdup.c\
-		ft_substr.c\
-		ft_strjoin.c\
-		ft_strtrim.c\
-		ft_split.c\
-		ft_itoa.c\
-		ft_strmapi.c\
-		ft_striteri.c\
-		ft_putchar_fd.c\
-		ft_putstr_fd.c\
-		ft_putendl_fd.c\
-		ft_putnbr_fd.c
+CC				=	cc
+CFLAGS			=	-Wall -Wextra -Werror -Iincludes
+AR				=	ar
+ARFLAGS 		=	rcs
+RM				=	rm -rf
 
-BONUS_SRCS = ft_lstnew.c\
-			ft_lstadd_front.c\
-			ft_lstsize.c\
-			ft_lstlast.c\
-			ft_lstadd_back.c\
-			ft_lstdelone.c\
-			ft_lstclear.c\
-			ft_lstiter.c\
-			ft_lstmap.c\
+SRCS			=	ft_printf.c aux_x.c aux_toupperx.c aux_c.c aux_s.c aux_p.c aux_d.c aux_u.c
 
-OBJ = $(SRCS:.c=.o)
+OBJS			=	$(SRCS:.c=.o)
 
-BONUS_OBJ = $(BONUS_SRCS:.c=.o)
+LIBFT_DIR		=	libft
+LIBFT			=	$(LIBFT_DIR)/libft.a
 
-CC = cc
-FLAGS = -Wall -Werror -Wextra -Iincludes
+%.o:				%.c
+					$(CC) $(CFLAGS) -c $< -o $@
 
-all : $(NAME)
+all:				$(NAME)
 
-$(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME):			$(LIBFT) $(OBJS)
+					cp $(LIBFT) $(NAME)
+					$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-bonus : $(OBJ) $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+$(LIBFT):
+					make -C $(LIBFT_DIR) all
 
-%.o : %cc
-	$(CC) $(FLAGS) -c $< -o $@
+clean:
+					make -C $(LIBFT_DIR) fclean
+					$(RM) $(OBJS)
 
-clean :
-	rm -f $(OBJ) $(BONUS_OBJ)
+fclean:				clean
+					make -C $(LIBFT_DIR) fclean
+					$(RM) $(NAME)
 
-fclean : clean
-	rm -f $(NAME)
+re:					fclean all
 
-re: fclean all
-
-.PHONY: re fclean clean all
+.PHONY:				all clean fclean re libft
