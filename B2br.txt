@@ -1,3 +1,5 @@
 nano /etc/bash.bashrc
 
 path = /home/limelo-c/monitoring.sh
+
+ece862271dca25cba110947cc8b557d342efc00b
