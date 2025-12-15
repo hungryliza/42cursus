@@ -6,18 +6,18 @@
 
 ## Description
 
-This project is a project at 42 that makes us create our first machine in VirtualBox.
+This project is a project at 42 teaches us how to create our first machine in VirtualBox. 
 
-The main function, which is `char *get_next_line(int fd)`, takes a file descriptor (`fd`) as an argument and returns the next line read from that file.
+The 
 
-**Goal:** Read a line from a file descriptor, terminated by a newline character (`\n`) or the end-of-file (EOF), and return it as a string.
-**Overview:** The implementation uses a static local variable (buff in the provided code) to store data read from the file descriptor that belongs to the next line. This ensures that the function can correctly resume reading where it left off on subsequent calls for the same file descriptor.
+**Goal:** Being able to set up our own operating system while implementing strict rules.
+**Overview:** Using an operating system such as `Debian` in my specific project, the set up was done without using any graphical interface. Multiple encrypted partitions using LVM were created, sudo was configured, creating a user, a group and adding a user to a group. SSH configuration, changing ports and disabling root login via SSH. Installing and configuring UFW package, enabling a firewall. 
 
 ---
 
 ## Instructions
 
-This project consists of a core function (get_next_line) and necessary utility functions (`ft_strlen`, `ft_strjoin`, `ft_strchr` and `buffer_move`).
+This project consists of the VirtualMachine setup and a `signature.txt`, consisting of the 
 
 ### Compilation
 
