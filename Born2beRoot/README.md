@@ -1,13 +1,12 @@
 *This project has been created as part of the 42 curriculum by limelo-c.*
 
-# Get Next Line
+# Born2beRoot
 
 ---
 
 ## Description
 
-This project is a project at 42 that requires the implementation of a function capable to implement a function that reads a file one line at a time, handling edge cases like buffer size mismatches. The function must return each line as a string, terminated by a newline character or the end-of-file (EOF). The main challenge lies in efficiently managing data between function calls, particularly when the buffer size doesn't match the exact length of a line. A static buffer will store partially read data between calls.
-
+This project is a project at 42 that makes us create our first machine in VirtualBox.
 
 The main function, which is `char *get_next_line(int fd)`, takes a file descriptor (`fd`) as an argument and returns the next line read from that file.
 
