@@ -3,3 +3,12 @@ nano /etc/bash.bashrc
 path = /home/limelo-c/monitoring.sh
 
 ece862271dca25cba110947cc8b557d342efc00b
+
+path to password rules
+
+sudo nano /etc/pam.d/common-password
+
+sudo policies 
+
+nano /etc/sudoers.d/sudo_config
+
