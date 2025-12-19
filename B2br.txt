@@ -22,7 +22,7 @@ sudo ufw status numbered
 
 sudo ufw delete <numero>
 
-passer `a l' autre user 
+passer a l' autre user 
 
 exit 
 
