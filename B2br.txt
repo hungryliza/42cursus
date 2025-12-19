@@ -27,3 +27,7 @@ passer `a l' autre user
 exit 
 
 puis password
+
+changer le host
+
+sudo nano /etc/hostname et /hosts
