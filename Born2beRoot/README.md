@@ -66,7 +66,7 @@ $ sudo crontab -u root -l
 ## Installation
 
 - Set up the VM in **VirtualBox** (or UTM) without a graphical interface.  
-- Create the hostname with your login followed by `42` (e.g., `rmedonca42`).  
+- Create the hostname with your login followed by `42` (e.g., `limelo-c42`).  
 - Configure encrypted partitions using **LVM** according to subject requirements.  
 
 --- 
