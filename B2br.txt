@@ -2,7 +2,11 @@ nano /etc/bash.bashrc
 
 path = /home/limelo-c/monitoring.sh
 
-ece862271dca25cba110947cc8b557d342efc00b
+path to signature : 
+
+shasum Born2beRoot.vdi
+
+daa2c61322d89daab3e5e7ba834e7fd64c69de08
 
 path to password rules
 
@@ -11,4 +15,5 @@ sudo nano /etc/pam.d/common-password
 sudo policies 
 
 nano /etc/sudoers.d/sudo_config
+
 
