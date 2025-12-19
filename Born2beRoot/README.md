@@ -48,6 +48,7 @@ $ sudo systemctl status ssh
 $ sudo ufw status
 $ getent passwd
 $ sudo crontab -u root -l
+$ sudo crontab -e
 ```
 
 ---
@@ -192,7 +193,7 @@ password requisite pam_pwquality.so retry=3 minlen=10 ucredit=-1 dcredit=-1 maxr
 ```bash
 $ sudo adduser <username>
 $ getent passwd <username>
-$ sudo chage -l <username>
+$ sudo change -l <username>
 ```
 
 ### Step 3: Creating a New Group
