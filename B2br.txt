@@ -16,4 +16,14 @@ sudo policies
 
 nano /etc/sudoers.d/sudo_config
 
+sudo systemctl status <coisa>
 
+sudo ufw status numbered
+
+sudo ufw delete <numero>
+
+passer `a l' autre user 
+
+exit 
+
+puis password
