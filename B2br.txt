@@ -31,3 +31,7 @@ puis password
 changer le host
 
 sudo nano /etc/hostname et /hosts
+
+arreter le script sans toucher le script
+
+sudo crontab -e
