@@ -35,3 +35,25 @@ sudo nano /etc/hostname et /hosts
 arreter le script sans toucher le script
 
 sudo crontab -e
+
+
+script
+
+grep "physical id" /proc/cpuinfo | wc -l to get number of physical cores 
+
+grep processor /proc/cpuinfo | wc -l to get number of virtual cores
+
+free --mega | awk '$1 == "Mem:" {print $3}' to get number mb of used memoir
+
+free --mega | awk '$1 == "Mem:" {print $2}' to get number of total mb memoire
+
+free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}' to get pourcent of used memory
+
+To view the occupied and available memory of the disk, we will use the df command, which stands for "disk filesystem", it is used to get a complete summary of the use of disk space. 
+
+The used memory is shown in MB, so we will then use the -m flag.
+
+Next, we will do a grep to only show us the lines that contain "/dev/" and then we will do another grep with the -v flag to exclude lines that contain "/boot". Finally, we will use the awk command and sum the value of the third word of each line to once all the lines are summed, print the final result of the sum. The entire command is as follows: df -m | grep "/dev/" | grep -v "/boot" | awk '{memory_use += $3} END {print memory_use}'
+
+df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf("(%d%%)\n"), use/total*100}' to get number of occuped disk memory
+
