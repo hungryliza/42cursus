@@ -57,3 +57,17 @@ Next, we will do a grep to only show us the lines that contain "/dev/" and then 
 
 df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf("(%d%%)\n"), use/total*100}' to get number of occuped disk memory
 
+Reading from disk is several orders of magnitude slower than reading from memory, so this slows everything way down. (Exchanging data between real memory and virtual memory is "swapping". The space on disk is "swap space".)
+
+lsblk (list block devices) is a Linux command-line utility that displays information about all available block devices (like hard drives, SSDs, USB drives, partitions, and loop devices) in a clear, tree-like format, showing their relationships, sizes, and mount points
+making it essential for understanding storage configuration on a system.
+
+difok
+(different from old) is a Linux password policy setting in the pwquality.conf file that defines the minimum number of characters that must be changed (inserted, deleted, or substituted) between a user's new password and their previous one, preventing simple modifications and enforcing password strength by checking the "distance" between passwords using the Levenshtein distance algorithm
+
+Yes, AppArmor is built into the Linux kernel
+and is often pre-installed and enabled by default on many distributions like Ubuntu and Debian, acting as a mandatory access control (MAC) system to restrict program capabilities with profiles. 
+
+
+
+
