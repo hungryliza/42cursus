@@ -72,6 +72,10 @@ difok
 Yes, AppArmor is built into the Linux kernel
 and is often pre-installed and enabled by default on many distributions like Ubuntu and Debian, acting as a mandatory access control (MAC) system to restrict program capabilities with profiles. 
 
+LVM
+
+LVM (Logical Volume Manager) is a Linux storage virtualization tool that provides a flexible layer between physical disks and the file system, allowing administrators to create, resize, and manage storage dynamically, even spanning multiple drives, without interrupting system use.
+
 encrypted LVM
 
 When you use this option, the installer creates a few partitions: a /boot partition, which is used to store the kernel and bootloader; depending on your system, a special firmware (e.g., EFI) partition; and an encrypted partition which contains a single LVM physical volume.
