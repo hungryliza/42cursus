@@ -57,6 +57,10 @@ Next, we will do a grep to only show us the lines that contain "/dev/" and then 
 
 df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf("(%d%%)\n"), use/total*100}' to get number of occuped disk memory
 
+
+
+Random theory quaestions 
+
 Reading from disk is several orders of magnitude slower than reading from memory, so this slows everything way down. (Exchanging data between real memory and virtual memory is "swapping". The space on disk is "swap space".)
 
 lsblk (list block devices) is a Linux command-line utility that displays information about all available block devices (like hard drives, SSDs, USB drives, partitions, and loop devices) in a clear, tree-like format, showing their relationships, sizes, and mount points
@@ -68,6 +72,13 @@ difok
 Yes, AppArmor is built into the Linux kernel
 and is often pre-installed and enabled by default on many distributions like Ubuntu and Debian, acting as a mandatory access control (MAC) system to restrict program capabilities with profiles. 
 
+encrypted LVM
+
+When you use this option, the installer creates a few partitions: a /boot partition, which is used to store the kernel and bootloader; depending on your system, a special firmware (e.g., EFI) partition; and an encrypted partition which contains a single LVM physical volume.
+
+Inside that encrypted LVM physical volume, there is a root partition and usually a swap partition, plus any additional partitions you want. All of these partitions are encrypted, but the /boot and /boot/efi partitions are not.
+
+It is never possible to encrypt the EFI partition, since the firmware doesn't know how to boot it in such a state. It is possible, but uncommon, to encrypt the /boot partition; grub requires special configuration to do so, which Debian doesn't implement by default.
 
 
 
