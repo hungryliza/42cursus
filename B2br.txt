@@ -36,6 +36,10 @@ arreter le script sans toucher le script
 
 sudo crontab -e
 
+voir partitions 
+
+sudo lsblk
+
 
 script
 
