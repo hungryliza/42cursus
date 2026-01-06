@@ -48,6 +48,10 @@ ufw allow 8080
 
 ufw delete <numero>
 
+verif sudo
+
+sudo -V
+
 script
 
 grep "physical id" /proc/cpuinfo | wc -l to get number of physical cores 
