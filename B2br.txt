@@ -52,6 +52,10 @@ verif sudo
 
 sudo -V
 
+ajouter user `a sudo 
+
+sudo adduser <nomuser> sudo (ou tout autre groupe btw)
+
 script
 
 grep "physical id" /proc/cpuinfo | wc -l to get number of physical cores 
