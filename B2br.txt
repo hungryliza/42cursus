@@ -56,6 +56,10 @@ ajouter user `a sudo
 
 sudo adduser <nomuser> sudo (ou tout autre groupe btw)
 
+verif que c bien dedans 
+
+getent group sudo user42
+
 script
 
 grep "physical id" /proc/cpuinfo | wc -l to get number of physical cores 
