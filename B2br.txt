@@ -87,6 +87,8 @@ The requiretty option in the Linux sudo configuration file (/etc/sudoers) mandat
 
 TTY Requirement: The primary function is to prevent sudo from being run from non-interactive sessions, such as automated scripts (cron jobs, CGI scripts, or remote SSH commands without explicit TTY allocation)Introduction
 
+Cron is a time-based job scheduler in Unix-like operating systems (Linux, macOS) that automates repetitive tasks by running commands or scripts at specified intervals, like daily backups, system maintenance, or sending reports, configured through crontab files using a syntax of minute, hour, day, month, and day of week. 
+
 script 
 
 #!/bin/bash
