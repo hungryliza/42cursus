@@ -99,6 +99,8 @@ difok
 Yes, AppArmor is built into the Linux kernel
 and is often pre-installed and enabled by default on many distributions like Ubuntu and Debian, acting as a mandatory access control (MAC) system to restrict program capabilities with profiles. 
 
+SSH (Secure Shell) is a network protocol that establishes encrypted connections between computers for secure remote access
+
 LVM
 
 LVM (Logical Volume Manager) is a Linux storage virtualization tool that provides a flexible layer between physical disks and the file system, allowing administrators to create, resize, and manage storage dynamically, even spanning multiple drives, without interrupting system use.
