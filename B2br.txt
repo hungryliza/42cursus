@@ -40,6 +40,13 @@ voir partitions
 
 sudo lsblk
 
+ajouter regle
+
+ufw status numbered
+
+ufw allow 8080
+
+ufw delete <numero>
 
 script
 
