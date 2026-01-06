@@ -119,6 +119,12 @@ Cron is a time-based job scheduler in Unix-like operating systems (Linux, macOS)
 
 difok (different characters) is a Linux password policy setting in the pam_pwquality module that defines the minimum number of characters that must change between a new password and the old one, preventing users from making trivial changes and enhancing security against brute-force attacks
 
+aptitude interface graphica mais complicado, apt mais basico 
+
+for simplicity : Use apt for basic tasks if you prefer straightforward commands.
+For power and ease: Use aptitude if you want better conflict resolution, an interactive interface, and automatic cleanup of unused dependencies
+
+
 script 
 
 #!/bin/bash
