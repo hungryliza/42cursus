@@ -60,6 +60,11 @@ verif que c bien dedans
 
 getent group sudo user42
 
+beepbbeppboopbaaop
+
+nano /etc/sudoers.d/sudo_config
+
+
 script
 
 grep "physical id" /proc/cpuinfo | wc -l to get number of physical cores 
