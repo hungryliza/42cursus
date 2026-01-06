@@ -89,6 +89,8 @@ TTY Requirement: The primary function is to prevent sudo from being run from non
 
 Cron is a time-based job scheduler in Unix-like operating systems (Linux, macOS) that automates repetitive tasks by running commands or scripts at specified intervals, like daily backups, system maintenance, or sending reports, configured through crontab files using a syntax of minute, hour, day, month, and day of week. 
 
+difok (different characters) is a Linux password policy setting in the pam_pwquality module that defines the minimum number of characters that must change between a new password and the old one, preventing users from making trivial changes and enhancing security against brute-force attacks
+
 script 
 
 #!/bin/bash
