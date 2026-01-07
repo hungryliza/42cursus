@@ -103,6 +103,8 @@ SSH (Secure Shell) is a network protocol that establishes encrypted connections 
 
 LVM
 
+while LVM (Logical Volume Manager) is a storage management tool for flexibly pooling and managing disk space, often used by VMs for their virtual hard drives, allowing dynamic resizing, snapshots, and spanning multiple physical disks. The key difference is VMs virtualize the entire system (CPU, RAM, Disk), whereas LVM virtualizes storage, providing advanced partitioning and management features for the underlying storage used by VMs (or bare metal)
+
 LVM (Logical Volume Manager) is a Linux storage virtualization tool that provides a flexible layer between physical disks and the file system, allowing administrators to create, resize, and manage storage dynamically, even spanning multiple drives, without interrupting system use.
 
 encrypted LVM
